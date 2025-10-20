@@ -20,11 +20,17 @@
 </script>
 
 
+
+
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">    
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">    
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">    
 <link rel="manifest" href="assets/img/favicons/site.webmanifest">
 
+
+
+    <!-- Styles for Cookie Consent Popup Message  -->
+    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" rel="stylesheet">
 
 </head>
 
@@ -43,6 +49,25 @@
  <p><a href="exercises/page-5.html">Ireland Top Tourist Attractions</a></p>
  <p><a href="exercises/hook.html">Hook Head Lighthouse - Explore Ireland's Ancient East</a></p>
  <p><a href="exercises/hero-image.html">Hero block with background image</a></p> 
+
+ 
+    <!-- JavaScript for Cookie Consent Popup Message -->
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#000"
+            },
+            "button": {
+                "background": "#f1d600"
+            }
+        },
+        "content": {
+            "href": "https://gabo-s4480.github.io/privacy.html"
+        }
+    });
+    </script>
 
 </body>
 </html>
