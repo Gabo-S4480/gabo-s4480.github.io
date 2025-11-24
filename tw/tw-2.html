@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Five Soccer Players Portfolio</title>
+    
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Tailwind Elements for interactive components (Dialog, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    
+    <!-- Configure default font to Inter for better consistency -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Begin Inspectlet Asynchronous Code -->
+    <script type="text/javascript">
+    (function() {
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 1991806671]);
+    var ldinsp = function(){
+    if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=1991806671&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+    setTimeout(ldinsp, 0);
+    })();
+    </script>
+    <!-- End Inspectlet Asynchronous Code -->
+</head>
+
+<body class="font-sans antialiased text-gray-800">
+
+    <!-- NEW HERO BLOCK WITH NAVIGATION -->
+    <div class="bg-gray-900">
+        <header class="absolute inset-x-0 top-0 z-50">
+          <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+            <div class="flex lg:flex-1">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" class="h-8 w-auto" />
+              </a>
+            </div>
+            <div class="flex lg:hidden">
+              <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+                <span class="sr-only">Open main menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+              <a href="#" class="text-sm/6 font-semibold text-white">Product</a>
+              <a href="#player1" class="text-sm/6 font-semibold text-white">Messi</a>
+              <a href="#player2" class="text-sm/6 font-semibold text-white">Ronaldo</a>
+              <a href="#player3" class="text-sm/6 font-semibold text-white">Mbappé</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+              <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </nav>
+          <el-dialog>
+            <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+              <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+                  <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                      <span class="sr-only">Your Company</span>
+                      <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" class="h-8 w-auto" />
+                    </a>
+                    <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+                      <span class="sr-only">Close menu</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-white/10">
+                      <div class="space-y-2 py-6">
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Product</a>
+                        <a href="#player1" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Messi</a>
+                        <a href="#player2" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Ronaldo</a>
+                        <a href="#player3" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Mbappé</a>
+                      </div>
+                      <div class="py-6">
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5">Log in</a>
+                      </div>
+                    </div>
+                  </div>
+                </el-dialog-panel>
+              </div>
+            </dialog>
+          </el-dialog>
+        </header>
+      
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+          <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+            <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+          </div>
+          <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+              <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+                Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-400"><span aria-hidden="true" class="absolute inset-0"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h1 class="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Data to enrich your online business</h1>
+              <p class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
+              <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a href="#" class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Get started</a>
+                <a href="#" class="text-sm/6 font-semibold text-white">Learn more <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </div>
+          <div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+            <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+          </div>
+        </div>
+    </div>
+    <!-- /NEW HERO BLOCK WITH NAVIGATION -->
+
+    <!-- CONTENT BLOCKS: TOP FIVE SOCCER PLAYERS -->
+    
+    <!-- Player 1: Lionel Messi -->
+    <section id="player1" class="bg-yellow-50 w-full py-10 px-8 lg:px-64">
+      <div>
+        <h2 class="text-4xl lg:text-6xl tracking-tight font-semibold mb-2">1. Lionel Messi</h2>
+        <img src="https://placehold.co/800x500/FACC15/ffffff?text=MESSI" alt="Placeholder image of Lionel Messi" class="mb-4 w-full h-auto rounded-lg shadow-md">
+        <p class="text-base lg:text-lg mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui maximus, tempor eros quis, pharetra magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed et arcu eu dolor gravida pharetra vel at leo.</p>
+        <p class="text-base lg:text-lg mb-4">Proin eget urna non quam dictum consequat. Donec interdum felis vel nisi cursus, vel varius lectus maximus. Aenean luctus velit vel neque dignissim, ac pretium orci dignissim. Ut id tortor id arcu dictum aliquet ac eget lectus.</p>
+      </div>
+    </section>
+    
+    <!-- Player 2: Cristiano Ronaldo -->
+    <section id="player2" class="bg-red-50 w-full py-10 px-8 lg:px-64">
+      <div>
+        <h2 class="text-4xl lg:text-6xl tracking-tight font-semibold mb-2">2. Cristiano Ronaldo</h2>
+        <img src="https://placehold.co/800x500/EF4444/ffffff?text=RONALDO" alt="Placeholder image of Cristiano Ronaldo" class="mb-4 w-full h-auto rounded-lg shadow-md">
+        <p class="text-base lg:text-lg mb-4">Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam nisl nisi eu nunc. Praesent feugiat, sapien nec tristique imperdiet, nulla sem tempor enim, ut bibendum massa lorem vel nisi.</p>
+        <p class="text-base lg:text-lg mb-4">Fusce vel magna a leo auctor iaculis. Nulla facilisi. Aenean et tortor vel justo feugiat consequat. Donec eu metus eu elit volutpat aliquam. Vivamus vel quam sed lorem luctus auctor.</p>
+      </div>
+    </section>
+    
+    <!-- Player 3: Kylian Mbappé -->
+    <section id="player3" class="bg-blue-50 w-full py-10 px-8 lg:px-64">
+      <div>
+        <h2 class="text-4xl lg:text-6xl tracking-tight font-semibold mb-2">3. Kylian Mbappé</h2>
+        <img src="https://placehold.co/800x500/60A5FA/ffffff?text=MBAPPE" alt="Placeholder image of Kylian Mbappé" class="mb-4 w-full h-auto rounded-lg shadow-md">
+        <p class="text-base lg:text-lg mb-4">Maecenas vel massa id mi efficitur convallis. Ut vitae odio vel magna aliquet consectetur. Nunc ac purus vitae nisi volutpat tristique. Aliquam erat volutpat.</p>
+        <p class="text-base lg:text-lg mb-4">Donec in dolor ut justo finibus auctor. Sed vitae ex ut tortor tincidunt volutpat. Curabitur dapibus, quam sed malesuada lacinia, nunc velit aliquet orci, eu hendrerit ipsum nisl non urna.</p>
+      </div>
+    </section>
+
+    <!-- Player 4: Erling Haaland -->
+    <section id="player4" class="bg-green-50 w-full py-10 px-8 lg:px-64">
+      <div>
+        <h2 class="text-4xl lg:text-6xl tracking-tight font-semibold mb-2">4. Erling Haaland</h2>
+        <img src="https://placehold.co/800x500/34D399/ffffff?text=HAALAND" alt="Placeholder image of Erling Haaland" class="mb-4 w-full h-auto rounded-lg shadow-md">
+        <p class="text-base lg:text-lg mb-4">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut in leo nec risus finibus dictum. Integer non metus vitae quam fringilla mattis.</p>
+        <p class="text-base lg:text-lg mb-4">Aliquam erat volutpat. Sed et lorem sit amet mi facilisis elementum. Vivamus eu justo vel ante euismod efficitur. Suspendisse potenti.</p>
+      </div>
+    </section>
+
+    <!-- Player 5: Vinícius Júnior -->
+    <section id="player5" class="bg-indigo-50 w-full py-10 px-8 lg:px-64">
+      <div>
+        <h2 class="text-4xl lg:text-6xl tracking-tight font-semibold mb-2">5. Vinícius Júnior</h2>
+        <img src="https://placehold.co/800x500/818CF8/ffffff?text=VINICIUS" alt="Placeholder image of Vinícius Júnior" class="mb-4 w-full h-auto rounded-lg shadow-md">
+        <p class="text-base lg:text-lg mb-4">Duis et ante vel elit tincidunt luctus. Etiam vel sapien nec elit ultricies tincidunt. Nam nec neque at odio bibendum vestibulum.</p>
+        <p class="text-base lg:text-lg mb-4">Quisque vitae neque et magna dictum vestibulum. Sed sed sapien nec elit tristique semper. Donec eget sapien in mi facilisis semper.</p>
+      </div>
+    </section>
+
+    
+
+</body>
+</html>

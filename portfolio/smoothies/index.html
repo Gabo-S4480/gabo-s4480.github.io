@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Smoothies - Fresh Smoothies</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Alpine.js for the responsive navbar functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        /* Set the Inter font globally and primary background */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav x-data="{ isOpen: false }" class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
+        <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300">
+                    Smooth Smoothies 🥤
+                </a>
+    
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none" aria-label="toggle menu">
+                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                        </svg>
+                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+                <div class="flex flex-col md:flex-row md:mx-6">
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Home</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Menu</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">About Us</a>
+                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Contact</a>
+                </div>
+    
+                <div class="flex justify-center md:block">
+                    <!-- Shopping Cart Icon -->
+                    <a class="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-300" href="#">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <!-- Cart count placeholder -->
+                        <span class="absolute top-0 left-0 p-1 text-xs text-white bg-indigo-500 rounded-full"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO CONTAINER -->
+    <header class="w-full h-[80vh] lg:h-[75vh] bg-gray-900 shadow-2xl overflow-hidden relative
+                    bg-cover bg-center" style="background-image: url('https://image.pollinations.ai/prompt/fresh%20fruit%20smoothies%20background%20blended%20ingredients%20healthy%20drink%20vibrant%20colors?width=1920&height=1080&seed=245')">
+        
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-45"></div>
+
+        <!-- Text Content - Centered Vertically and Horizontally -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+            
+            <h1 class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-white tracking-tight leading-none mb-4 
+                         drop-shadow-xl animate-pulse">
+                SMOOTH SMOOTHIES
+            </h1>
+
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-indigo-200 
+                         drop-shadow-lg max-w-3xl">
+                Where flavor meets wellness. Our premium smoothies are perfect anytime and offer a delicious alternative to sugary, unhealthy snacks.
+            </h2>
+        </div>
+        
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto p-8 mt-8">
+        
+        <!-- Smoothie Menu Section -->
+        <section class="py-12">
+            <h3 class="text-4xl font-extrabold text-center text-gray-800 mb-12 border-b-4 border-indigo-500 pb-2">
+                Our Refreshing Blends
+            </h3>
+
+            <!-- Responsive Grid for Smoothie Cards (1 column on mobile, 2 on tablet/desktop) -->
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-2">
+                
+                <!-- Card 1: Watermelon Wonder -->
+                <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-300/50">
+                    <img src="https://image.pollinations.ai/prompt/watermelon%20smoothie%20fresh%20mint%20hydrating%20low%20calorie?width=600&height=400&seed=10" alt="Watermelon Wonder Smoothie" class="w-full h-56 object-cover border-b-4 border-pink-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FF69B4/ffffff?text=Watermelon';">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-semibold text-pink-700 mb-2">Watermelon Wonder 🍉</h4>
+                        <p class="text-gray-600 mb-4">Watermelon is a delicious and refreshing fruit rich in vitamin C, vitamin A, and healthy plant compounds. At only 60 calories, its high water content makes this smoothie incredibly **hydrating** and helps you feel full.</p>
+                        <span class="inline-block bg-pink-100 text-pink-800 text-sm font-bold px-4 py-1.5 rounded-full">💧 Hydrating</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Apple Delight -->
+                <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-300/50">
+                    <img src="https://image.pollinations.ai/prompt/apple%20cinnamon%20smoothie%20healthy%20creamy%20oat%20milk%20heart%20health?width=600&height=400&seed=11" alt="Apple Delight Smoothie" class="w-full h-56 object-cover border-b-4 border-green-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/90EE90/000000?text=Apple';">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-semibold text-green-700 mb-2">Apple Delight 🍎</h4>
+                        <p class="text-gray-600 mb-4">Apples are an amazing source of **fiber and Vitamin C**. They contain soluble fiber which helps lower blood cholesterol, linking them to a lower risk of heart disease and type 2 diabetes.</p>
+                        <span class="inline-block bg-green-100 text-green-800 text-sm font-bold px-4 py-1.5 rounded-full">❤️ Heart Health</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Blueberry Surprise -->
+                <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-300/50">
+                    <img src="https://image.pollinations.ai/prompt/blueberry%20superfood%20smoothie%20with%20yogurt%20antioxidant%20rich%20purple%20color?width=600&height=400&seed=12" alt="Blueberry Surprise Smoothie" class="w-full h-56 object-cover border-b-4 border-indigo-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4B0082/ffffff?text=Blueberries';">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-semibold text-indigo-700 mb-2">Blueberry Surprise 🫐</h4>
+                        <p class="text-gray-600 mb-4">One of our best sellers, blueberries are listed as a **superfood** because they are low in calories and incredibly beneficial for health. They boast the highest **antioxidant capacity** among all popular fruits and vegetables.</p>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-bold px-4 py-1.5 rounded-full">✨ Superfood</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Lemon Luxury -->
+                <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-[1.02] hover:shadow-indigo-300/50">
+                    <img src="https://image.pollinations.ai/prompt/lemon%20luxury%20smoothie%20bright%20yellow%20citrus%20zest%20energizing%20drink?width=600&height=400&seed=13" alt="Lemon Luxury Smoothie" class="w-full h-56 object-cover border-b-4 border-yellow-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFFF00/000000?text=Lemon';">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-semibold text-yellow-700 mb-2">Lemon Luxury 🍋</h4>
+                        <p class="text-gray-600 mb-4">Add zest to your day! As a citrus fruit, lemons are rich in **Vitamin C**, a primary antioxidant that helps reduce the risk of cardiovascular disease and lowers blood pressure. Refreshing and energizing!</p>
+                        <span class="inline-block bg-yellow-100 text-yellow-800 text-sm font-bold px-4 py-1.5 rounded-full">⚡️ Energizing</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mt-16 mb-8 text-center bg-indigo-50 p-10 rounded-xl shadow-inner">
+            <h4 class="text-3xl font-bold text-indigo-800 mb-3">Ready to Taste the Difference?</h4>
+            <p class="text-indigo-600 text-lg">Discover why we are the preferred destination for lovers of natural and healthy flavor.</p>
+        </section>
+        
+        <!-- Feature Section -->
+        <section class="bg-white py-16">
+            <div class="container px-6 mx-auto">
+                <h3 class="text-4xl font-extrabold text-center text-gray-800 mb-6 border-b-4 border-indigo-500 pb-2">
+                    Why Choose Smooth Smoothies?
+                </h3>
+        
+                <p class="mt-4 text-gray-500 text-center xl:mt-6 mb-12 max-w-3xl mx-auto">
+                    We are dedicated to offering the healthiest, most convenient, and best-tasting blends on the market.
+                </p>
+        
+                <div class="grid grid-cols-1 gap-8 xl:mt-12 xl:gap-16 md:grid-cols-2 lg:grid-cols-3">
+                    
+                    <!-- Feature 1: Freshly Sourced Ingredients -->
+                    <div class="space-y-3 p-6 rounded-xl border border-gray-100 shadow-md transition duration-300 hover:shadow-xl hover:border-indigo-200">
+                        <span class="inline-block p-3 text-indigo-600 bg-indigo-100 rounded-full">
+                            <!-- Document/List Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                            </svg>
+                        </span>
+        
+                        <h4 class="text-xl font-semibold text-gray-700 capitalize">Freshly Sourced Ingredients</h4>
+        
+                        <p class="text-gray-500">
+                            We use 100% natural fruits and vegetables, locally sourced whenever possible, guaranteeing maximum flavor and nutrients.
+                        </p>
+        
+                        <a href="#" class="inline-flex items-center -mx-1 text-sm text-indigo-500 capitalize transition-colors duration-300 transform hover:underline hover:text-indigo-600">
+                            <span class="mx-1">Meet our partners</span>
+                            <svg class="w-4 h-4 mx-1 rtl:-scale-x-100" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+        
+                    <!-- Feature 2: Fast & Easy Ordering -->
+                    <div class="space-y-3 p-6 rounded-xl border border-gray-100 shadow-md transition duration-300 hover:shadow-xl hover:border-indigo-200">
+                        <span class="inline-block p-3 text-indigo-600 bg-indigo-100 rounded-full">
+                            <!-- Gear/Settings Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                            </svg>
+                        </span>
+        
+                        <h4 class="text-xl font-semibold text-gray-700 capitalize">Fast & Easy Ordering</h4>
+        
+                        <p class="text-gray-500">
+                            Order on our website or app and skip the line! Your perfectly blended drink will be ready for pickup in minutes.
+                        </p>
+        
+                        <a href="#" class="inline-flex items-center -mx-1 text-sm text-indigo-500 capitalize transition-colors duration-300 transform hover:underline hover:text-indigo-600">
+                            <span class="mx-1">Start your order</span>
+                            <svg class="w-4 h-4 mx-1 rtl:-scale-x-100" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+        
+                    <!-- Feature 3: Seasonal Featured Blends -->
+                    <div class="space-y-3 p-6 rounded-xl border border-gray-100 shadow-md transition duration-300 hover:shadow-xl hover:border-indigo-200">
+                        <span class="inline-block p-3 text-indigo-600 bg-indigo-100 rounded-full">
+                            <!-- Bar Chart Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </span>
+        
+                        <h4 class="text-xl font-semibold text-gray-700 capitalize">Seasonal Featured Blends</h4>
+        
+                        <p class="text-gray-500">
+                            Our menu is constantly evolving with unique, limited-time blends that highlight the best ingredients of each season.
+                        </p>
+        
+                        <a href="#" class="inline-flex items-center -mx-1 text-sm text-indigo-500 capitalize transition-colors duration-300 transform hover:underline hover:text-indigo-600">
+                            <span class="mx-1">See this month's special</span>
+                            <svg class="w-4 h-4 mx-1 rtl:-scale-x-100" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+
+                    <!-- Feature 4: Nutritional Focus -->
+                    <div class="space-y-3 p-6 rounded-xl border border-gray-100 shadow-md transition duration-300 hover:shadow-xl hover:border-indigo-200">
+                        <span class="inline-block p-3 text-indigo-600 bg-indigo-100 rounded-full">
+                            <!-- Location/Globe Icon (Used as a placeholder for a health/nutrition icon) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                            </svg>
+                        </span>
+        
+                        <h4 class="text-xl font-semibold text-gray-700 capitalize">Nutritional Focus</h4>
+        
+                        <p class="text-gray-500">
+                            Every recipe is designed by a nutritionist to maximize protein, fiber, and essential vitamins without added sugars.
+                        </p>
+        
+                        <a href="#" class="inline-flex items-center -mx-1 text-sm text-indigo-500 capitalize transition-colors duration-300 transform hover:underline hover:text-indigo-600">
+                            <span class="mx-1">View Nutritional Information</span>
+                            <svg class="w-4 h-4 mx-1 rtl:-scale-x-100" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+
+                    <!-- Feature 5: Fully Customizable -->
+                    <div class="space-y-3 p-6 rounded-xl border border-gray-100 shadow-md transition duration-300 hover:shadow-xl hover:border-indigo-200">
+                        <span class="inline-block p-3 text-indigo-600 bg-indigo-100 rounded-full">
+                            <!-- Build/Blocks Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                            </svg>
+                        </span>
+        
+                        <h4 class="text-xl font-semibold text-gray-700 capitalize">Fully Customizable</h4>
+        
+                        <p class="text-gray-500">
+                            Adjust sweetness, add boosters, change ingredients: craft your perfect drink down to the last healthy detail.
+                        </p>
+        
+                        <a href="#" class="inline-flex items-center -mx-1 text-sm text-indigo-500 capitalize transition-colors duration-300 transform hover:underline hover:text-indigo-600">
+                            <span class="mx-1">Design your own blend</span>
+                            <svg class="w-4 h-4 mx-1 rtl:-scale-x-100" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+
+                    <!-- Feature 6: Clean & Natural Flavors -->
+                    <div class="space-y-3 p-6 rounded-xl border border-gray-100 shadow-md transition duration-300 hover:shadow-xl hover:border-indigo-200">
+                        <span class="inline-block p-3 text-indigo-600 bg-indigo-100 rounded-full">
+                            <!-- Sparkle/Magic Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                        </span>
+        
+                        <h4 class="text-xl font-semibold text-gray-700 capitalize">Clean & Natural Flavors</h4>
+        
+                        <p class="text-gray-500">
+                            We never use artificial colors, preservatives, or high-fructose corn syrup. Just pure, delicious, natural flavor.
+                        </p>
+        
+                        <a href="#" class="inline-flex items-center -mx-1 text-sm text-indigo-500 capitalize transition-colors duration-300 transform hover:underline hover:text-indigo-600">
+                            <span class="mx-1">Read our ingredient promise</span>
+                            <svg class="w-4 h-4 mx-1 rtl:-scale-x-100" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 mt-12">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center">
+                <a href="#" class="text-xl font-bold text-white hover:text-indigo-400">Smooth Smoothies</a>
+                <p class="text-sm text-gray-400 mt-2">© 2025 All rights reserved.</p>
+            </div>
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="#" class="text-gray-400 hover:text-indigo-500 transition duration-300">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-indigo-500 transition duration-300">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

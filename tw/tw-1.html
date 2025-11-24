@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Responsive Content Blocks</title>
+    
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure default font to Inter for better consistency -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations (Integrated Hero Block Styles) -->
+    <style>
+        /* Keyframes for the background color cycle (change-background-color element) */
+        @keyframes color-cycle {
+            0%   { background-color: #ef4444; } /* Red-500 */
+            33%  { background-color: #3b82f6; } /* Blue-500 */
+            66%  { background-color: #10b981; } /* Green-500 */
+            100% { background-color: #ef4444; }
+        }
+
+        /* Keyframes for the 'slide-in-top' effect (h1) */
+        @keyframes slide-in-top {
+            0% { transform: translateY(-100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Keyframes for the 'slide-in-left' effect (h2) */
+        @keyframes slide-in-left {
+            0% { transform: translateX(-100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Applying the animations via custom class names */
+        .change-background-color {
+            animation: color-cycle 15s ease infinite;
+        }
+
+        .slide-in-top {
+            animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        .slide-in-left {
+            animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation-delay: 0.5s; /* Delay for H2 to slide in after H1 */
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-800">
+
+    <!-- HERO BLOCK WITH ANIMATIONS (Added from selected code) -->
+    <header class="relative h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden">
+        
+        <!-- Animated Background Container -->
+        <div class="change-background-color absolute inset-0 -z-10"></div>
+
+        <!-- Hero Text Container -->
+        <div class="hero-text-container text-white p-8 rounded-xl bg-black bg-opacity-30 backdrop-blur-sm">
+            
+            <!-- H1: Slide-in-top -->
+            <h1 class="slide-in-top text-6xl md:text-8xl font-extrabold tracking-tight drop-shadow-lg">
+                Albert Camus
+            </h1>
+            
+            <!-- H2: Slide-in-left -->
+            <h2 class="slide-in-left text-2xl md:text-3xl font-light mt-2 drop-shadow-md">
+                BE BE BE BE BEBESITAAAAAAA
+            </h2>
+        </div>
+        
+        <!-- Animated "Change Me" element - positioned at the bottom -->
+        <div class="change-background-color absolute bottom-0 left-0 right-0 p-3 text-center text-sm text-white font-mono bg-black bg-opacity-50">
+            I am the background color!
+        </div>
+    </header>
+    <!-- /HERO BLOCK -->
+
+    <!-- THREE RESPONSIVE CONTENT BLOCKS (Original Content) -->
+    <section class="bg-red-50 w-full py-10 px-8 lg:px-64">
+      <div>
+        <h2 class="text-4xl lg:text-6xl tracking-tight font-semibold mb-4">Section One</h2>
+        <img src="https://placehold.co/600x400" alt="Placeholder image" class="mb-4 w-full h-auto">
+        <p class="text-base lg:text-lg mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam nisl nisi eu nunc.</p>
+        <p class="text-base lg:text-lg mb-4">Praesent feugiat, sapien nec tristique imperdiet, nulla sem tempor enim, ut bibendum massa lorem vel nisi.</p>
+      </div>
+    </section>
+    
+    <section class="bg-green-50 w-full py-10 px-8 lg:px-64">
+      <div>
+        <h2 class="text-4xl lg:text-6xl tracking-tight font-semibold mb-4">Section Two</h2>
+        <img src="https://placehold.co/600x400" alt="Placeholder image" class="mb-4 w-full h-auto">
+        <p class="text-base lg:text-lg mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam nisl nisi eu nunc.</p>
+        <p class="text-base lg:text-lg mb-4">Praesent feugiat, sapien nec tristique imperdiet, nulla sem tempor enim, ut bibendum massa lorem vel nisi.</p>
+      </div>
+    </section>
+    
+    <section class="bg-blue-50 w-full py-10 px-8 lg:px-64">
+      <div>
+        <h2 class="text-4xl lg:text-6xl tracking-tight font-semibold mb-4">Section Three</h2>
+        <img src="https://placehold.co/600x400" alt="Placeholder image" class="mb-4 w-full h-auto">
+        <p class="text-base lg:text-lg mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam nisl nisi eu nunc.</p>
+        <p class="text-base lg:text-lg mb-4">Praesent feugiat, sapien nec tristique imperdiet, nulla sem tempor enim, ut bibendum massa lorem vel nisi.</p>
+      </div>
+    </section>
+</body>
+</html>
